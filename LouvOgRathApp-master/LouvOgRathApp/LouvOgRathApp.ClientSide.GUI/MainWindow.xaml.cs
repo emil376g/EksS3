@@ -37,6 +37,20 @@ namespace LouvOgRathApp.ClientSide.GUI
             WeatherApi weather = logic.Weather();
             InitializeComponent();
             lblWeather.Content = weather.Main.Temp;
+            for (int i = 0; i < 10000; i++)
+            {
+                if (client.ClientConnected())
+                {
+                    IPersistable[] Iper = client.GetAllCases();
+                    List<Case> cases = new List<Case>();
+                    foreach (Case item in Iper)
+                    {
+                        cases.Add(item);
+                    }
+                    MessageBox.Show("success");
+                }
+            }
+            
 
         }
 

@@ -111,7 +111,7 @@ namespace LouvOgRathApp.ServerSide.ServerControllers
                 {
                     case RequestedAction.GetAllCases:
                         CasesDataAccess caseDataAccess = new CasesDataAccess();
-                        List<Case> cases = caseDataAccess.GetAllCase();
+                        List<Case> cases = new List<Case>();
                         Case[] caseArray = cases.ToArray();
                         TransmissionData transmission = new TransmissionData(caseArray);
                         RespondToClient(transmission);
